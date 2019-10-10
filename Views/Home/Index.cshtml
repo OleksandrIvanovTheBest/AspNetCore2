@@ -8,18 +8,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Result</title>
 </head>
 <body class="p-1">
-    <table class="table table-condensed table-bordered table-stripped">
-        @foreach (var kvp in Model)
-        {
-            <tr>
-                <th>@kvp.Key</th>
-                <td>@kvp.Value</td>
-            </tr>
-        }
+    <table class="table table-stripped table-sm table-bordered">
+        <tbody>
+            @foreach (var kvp in Model)
+            {
+                <tr>
+                    <th scope="row">@kvp.Key</th>
+                    <td>@kvp.Value</td>
+                </tr>
+            }
+        </tbody>
     </table>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
